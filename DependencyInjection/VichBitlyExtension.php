@@ -31,7 +31,7 @@ class VichBitlyExtension extends Extension
         
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         
-        $toLoad = array('services.xml');
+        $toLoad = array('services.xml', 'twig.xml');
         foreach ($toLoad as $file) {
             $loader->load($file);
         }
