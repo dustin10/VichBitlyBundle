@@ -108,6 +108,32 @@ is that simple.
 You can inject the `vich_bitly.api` service anywhere you need to shorten urls 
 using the bit.ly service.
 
+**Note:** If for any reason the request to the bit.ly api fails then the original 
+long url is returned from the `shorten` method.
+
+## Expanding Urls
+
+Expanding shortened urls is also supported. Here is an example of expanding a url 
+in a controller.
+
+``` php
+class MainController extends Controller
+{
+    public function expandAction()
+    {
+        $url = 'http://bit.ly/A3aid';
+        $expandedUrl = $this->get('vich_bitly.api')->expand($url);
+
+        // ..
+    }
+}
+```
+
+Now `$expandedUrl` contains the expanded url.
+
+**Note:** If for any reason the request to the bit.ly api fails then the original 
+short url is returned from the `expand` method.
+
 ## Twig Functions
 
 If you don't want to shorten urls in the controller then you can shorten them 
