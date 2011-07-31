@@ -142,3 +142,10 @@ right in your Twig template using the following function.
 ``` twig
 {{ vich_bitly_shorten(url) }}
 ```
+
+Expanding of shortened urls is also supported in a Twig template using the 
+following function.
+
+``` twig
+{{ vich_bitly_expand(url) }}
+```
