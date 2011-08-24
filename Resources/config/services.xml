@@ -6,7 +6,7 @@
     
     <services>
         
-        <service id="vich_bitly.api.request_builder" class="Vich\BitlyBundle\Builder\ApiRequestBuilder">
+        <service id="vich_bitly.api.request_builder" class="Vich\BitlyBundle\Builder\ApiRequestBuilder" public="false">
             <argument>%vich_bitly.login_name%</argument>
             <argument>%vich_bitly.api_key%</argument>
         </service>
