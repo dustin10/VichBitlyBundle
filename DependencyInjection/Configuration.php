@@ -3,20 +3,21 @@
 namespace Vich\BitlyBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * Configuration.
  * 
  * @author Dustin Dobervich <ddobervich@gmail.com>
  */
-class Configuration
+class Configuration implements ConfigurationInterface
 {
     /**
-     * Gets the configuration tree for the extension.
+     * Gets the configuration tree builder for the extension.
      * 
-     * @return Tree The configuration tree
+     * @return TreeBuilder The configuration tree builder
      */
-    public function getConfigTree()
+    public function getConfigTreeBuilder()
     {
         $tb = new TreeBuilder();
         $root = $tb->root('vich_bitly');
@@ -28,6 +29,6 @@ class Configuration
             ->end()
         ;
         
-        return $tb->buildTree();
+        return $tb;
     }
 }
