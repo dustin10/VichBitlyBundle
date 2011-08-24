@@ -50,7 +50,7 @@ class BitlyExtension extends \Twig_Extension
         
         $funcs = array();
         foreach ($names as $twig => $local) {
-            $funcs[$twig] = new \Twig_Function_Method($this, $local, array('is_safe' => array('html')));
+            $funcs[$twig] = new \Twig_Function_Method($this, $local);
         }
         
         return $funcs;
