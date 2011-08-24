@@ -23,8 +23,8 @@ class Configuration
         
         $root
             ->children()
-                ->scalarNode('login_name')->cannotBeOverwritten()->isRequired()->end()
-                ->scalarNode('api_key')->cannotBeOverwritten()->isRequired()->end()
+                ->scalarNode('login_name')->isRequired()->end()
+                ->scalarNode('api_key')->isRequired()->end()
             ->end()
         ;
         
