@@ -45,7 +45,7 @@ class ApiRequestBuilder
      */
     public function build($method, array $options = array())
     {
-        $options = array_merge($options, $this->getCredentials());
+        $options = array_merge($options, $this->getDefaultOptions());
         
         return sprintf(
             '%s/%s?%s',
@@ -56,11 +56,11 @@ class ApiRequestBuilder
     }
     
     /**
-     * Gets an array containing the bit.ly service credentials.
+     * Gets an array containing the bit.ly service request default options.
      * 
-     * @return array The credentials
+     * @return array The default options
      */
-    private function getCredentials()
+    private function getDefaultOptions()
     {
         return array(
             'login' => $this->login,
